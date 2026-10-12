@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A calm, focused space for discovering thoughtful articles." />
+    <title>Inkline — Article space</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">
+        <span class="brand-mark">i</span>
+        <span>inkline</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#discover">Discover</a>
+        <a href="#about">About</a>
+        <button class="button button-ghost" id="nav-auth" type="button">Sign in</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="discover">
+        <div class="hero-copy">
+          <p class="eyebrow">A better way to read</p>
+          <h1>Ideas worth<br /><em>your time.</em></h1>
+          <p class="hero-text">Thoughtful stories, practical perspectives, and fresh voices — curated for curious people.</p>
+          <button class="button button-primary" id="hero-auth" type="button">Start reading <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div>
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="paper-card">
+            <span class="paper-label">FEATURED ESSAY</span>
+            <h2>The quiet power<br />of paying attention</h2>
+            <div class="paper-line"></div>
+            <p>By Maya Chen</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="latest-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Fresh from the community</p>
+            <h2 id="latest-title">Latest stories</h2>
+          </div>
+          <span class="section-note">More coming soon</span>
+        </div>
+        <div class="story-grid">
+          <article class="story-card story-card-warm">
+            <span class="story-number">01</span>
+            <span class="story-tag">CREATIVITY</span>
+            <h3>Making room for better ideas</h3>
+            <p>A small guide to creating space for curiosity in a busy day.</p>
+            <span class="read-time">5 min read</span>
+          </article>
+          <article class="story-card story-card-blue">
+            <span class="story-number">02</span>
+            <span class="story-tag">LIFE</span>
+            <h3>Notes from a slower morning</h3>
+            <p>What changes when the first hour of your day belongs to you.</p>
+            <span class="read-time">4 min read</span>
+          </article>
+          <article class="story-card story-card-lilac">
+            <span class="story-number">03</span>
+            <span class="story-tag">WORK</span>
+            <h3>The case for finishing less</h3>
+            <p>Why thoughtful progress beats a crowded list of done tasks.</p>
+            <span class="read-time">6 min read</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="about-mark">✦</div>
+        <div>
+          <p class="eyebrow">Made for curious minds</p>
+          <h2>Read deeply.<br /><em>Live widely.</em></h2>
+        </div>
+        <p>Inkline is a simple home for ideas that stay with you. Sign in to keep your reading space close.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 inkline</span>
+      <span>Made for the curious</span>
+    </footer>
+
+    <div class="modal-backdrop" id="auth-modal" hidden>
+      <section class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+        <button class="modal-close" id="close-modal" type="button" aria-label="Close">×</button>
+        <div class="modal-heading">
+          <span class="brand-mark">i</span>
+          <p class="eyebrow" id="auth-mode">Welcome back</p>
+          <h2 id="auth-title">Sign in to inkline</h2>
+          <p id="auth-subtitle">Keep your reading space close.</p>
+        </div>
+        <form id="auth-form">
+          <label id="name-field" hidden>Name<input id="name" name="name" autocomplete="name" /></label>
+          <label>Email<input id="email" name="email" type="email" autocomplete="email" required /></label>
+          <label>Password<input id="password" name="password" type="password" autocomplete="current-password" required /></label>
+          <button class="button button-primary button-full" type="submit" id="submit-auth">Sign in <span aria-hidden="true">→</span></button>
+          <p class="form-message" id="form-message" role="status"></p>
+        </form>
+        <button class="mode-switch" id="mode-switch" type="button">New here? Create an account</button>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
